@@ -10,6 +10,7 @@ body {
 
 .app {
   background-image: url('./assets/cold-bg.jpg');
+  background-color: aquamarine;
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease;
@@ -17,11 +18,12 @@ body {
 
 .app.warm {
   background-image: url('./assets/warm-bg.jpg');
+  background-color: aqua;
 }
 
 main {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.482), rgba(0, 0, 0, 0.458));
   padding-top: 25px;
 }
 
@@ -30,7 +32,11 @@ main {
   margin: 0 0 75px;
   padding: 25px;
   padding-bottom: 75px;
-  transition: 1s ease-in;
+  transition: 0.4s ease-in;
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  
 }
 
 .search-box .search-bar {
@@ -67,18 +73,22 @@ main {
 
 .location-box .location {
   color: rgb(255, 252, 252);
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 500;
-  text-align: center;
+  text-align: left;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  padding-left: 30px;
+  padding-top: 30px;
 }
 
 .location-box .date {
   color: #FFF;
   font-size: 20px;
   font-weight: 300;
-  font-style: italic;
-  text-align: center;
+  
+  text-align: left;
+  padding-left: 30px;
+  padding-top: 15px;
   text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
 }
 
@@ -108,7 +118,7 @@ main {
   color: #FFF;
   font-size: 48px;
   font-weight: 700;
-  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
 }
 
 .icon {
@@ -125,7 +135,7 @@ input.yourclassname::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   gap: 10px;
   background-color: #47474700;
   padding: 0px;
@@ -142,8 +152,9 @@ input.yourclassname::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   padding-top: 25px;
 }
 .item2{
-  text-align: right;
+  text-align: center;
   padding-right: 0px;
+  
 }
 .weather{
   color: #FFF;
