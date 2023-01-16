@@ -45,18 +45,22 @@ function App() {
             <div className="location">{weather.name}, {weather.sys.country}</div>
             <div className="date">{dateBuilder(new Date())}</div>
           </div>
-          <div className="weather-box">
-            <div className="temp">
+
+          <div className="weather-box" class="grid-container">
+            <div className="temp" class="item1" >
               {Math.round(weather.main.temp)}°c
             </div>
-            <div className="weather">{weather.weather[0].main}</div>
-          
-          </div>
-          <div className='icon'>
+            <div className='icon' class="item2">
             <img
               src={`${api.icon}${weather.weather[0].icon}@2x.png`}
             />
             </div>
+          
+          </div>
+          <div className="weather">
+              {weather.weather[0].main}
+            </div>
+          
         </div>
         ) : ('')}
         <div className="search-box">
