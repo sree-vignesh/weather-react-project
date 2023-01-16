@@ -1,9 +1,21 @@
+import { clear } from '@testing-library/user-event/dist/clear';
 import React, { useState } from 'react';
 const api = {
   key: "b9230736bb7e18c66e3887ef29281385",
   base: "https://api.openweathermap.org/data/2.5/",
   icon:"http://openweathermap.org/img/wn/"
 }
+const app ={
+  
+  rain:'rain',
+  drizzle:'drizzle',
+  thunderstorm:'thunder',
+  snow:'snow',
+  clearsky:'clearsky',
+  clouds:'clouds',
+  default:'default'
+  }
+
 
 function App() {
   const [query, setQuery] = useState('');
@@ -34,9 +46,35 @@ function App() {
   }
     
   
-
+  function setbg(){
+ 
+    switch(weather.weather[0].main){
+      case "Rain" :
+        return `${app.rain}`
+        break;
+      case "Thunderstorm" :
+        return `${app.thunderstorm}`
+        break;
+      case "Drizzle" :
+        return `${app.drizzle}`
+        break;
+      case "Snow" :
+        return `${app.snow}`
+        break;
+      case "Clear" :
+        return `${app.clearsky}`
+        break;
+      case "Clouds" :
+        return `${app.clouds}`
+        break;
+      default:
+        return `${app.default}`
+    }
+  }
   return (
-    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
+    <div className={(typeof weather.main != "undefined") ? setbg() : 'original'
+                     
+                  }>
       <main>
         
         {(typeof weather.main != "undefined") ? (
@@ -53,15 +91,16 @@ function App() {
             </div>
           
           </div>
-          <div className="weather">
-              {weather.weather[0].main}
-          </div>
+         
 
           <div className="location-box">
           <div className="date">{dateBuilder(new Date())}
             </div>
             <div className="location">{weather.name}, {weather.sys.country}
             </div>
+            <div className="weather">
+              {weather.weather[0].description}
+          </div>
             
           </div>
 

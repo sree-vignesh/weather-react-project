@@ -8,23 +8,45 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.app {
-  background-image: url('./assets/cold-bg.jpg');
-  background-color: aquamarine;
+.original {
+  background-image: url('./assets/tropical.jpg');
+  /*filter: blur(5px);*/
   background-size: cover;
   background-position: bottom;
-  transition: 0.4s ease;
+  transition: 0.4s ease-in;
+}
+.default{
+ background-color: red;
+}
+.clearsky{
+
+ background-image: url('./assets/clearsky.jpg');
+}
+.rain{
+ 
+ background-image: url('./assets/rain.jpg');
+}
+.snow{
+ background-image: url('./assets/snow.jpg');
+}
+.drizzle{
+ 
+ background-image: url('./assets/drizzle3.jpg');
+}
+.thunderstorm{
+ 
+ background-image: url('./assets/thunderstorm.jpg');
+}
+.clouds{
+ background-image: url('./assets/clouds2.jpg');
 }
 
-.app.warm {
-  background-image: url('./assets/warm-bg.jpg');
-  background-color: aqua;
-}
 
 main {
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.482), rgba(0, 0, 0, 0.458));
   padding-top: 25px;
+  backdrop-filter: blur(8px);
 }
 
 .search-box {
@@ -36,7 +58,7 @@ main {
   position:absolute;
   bottom: 0;
   right: 0;
-  
+  filter: blur(-5px);
 }
 
 .search-box .search-bar {
@@ -128,10 +150,8 @@ main {
   padding-left: 0px;
   padding-right: 0px;
 }
-input.yourclassname::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
-  opacity: 1; /* Firefox */
-}
+
+
 
 .grid-container {
   display: grid;
@@ -141,7 +161,8 @@ input.yourclassname::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   padding: 0px;
   padding-top: 0px;
   padding-left: 30px;
-  border-radius: 16px;
+  border-radius: 35px;
+  backdrop-filter: blur(0.5px);
 }
 .item1{
   color: #FFF;
@@ -159,7 +180,7 @@ input.yourclassname::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 .weather{
   color: #FFF;
   text-align:left;
-  padding-left: 35px;
+  padding-left: 30px;
   font-size: 20px;
   font-style: italic;
   text-shadow: 3px 3px rgba(32, 32, 32, 0.5);
